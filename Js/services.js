@@ -3,8 +3,7 @@ const BASE_URL = 'https://api.themoviedb.org/3/';
 const LANGUAGE = '&language=ru-RU';
 
 
-const getData = url => fetch(url)
-  .then(response => {
+const getData = url => fetch(url).then(response => {
       if (response.ok) {
         return response.json()
       }

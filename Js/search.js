@@ -2,7 +2,7 @@ import { search as searchGet } from "./services.js";
 import renderCard from "./renderCard.js";
 
 
-const title = document.querySelector('.other-films__title');
+const title = document.querySelector('.other-films__title tube');
 const filmWeek = document.querySelector('.film-week');
 const searchForm = document.querySelector('.header__search-form');
 const searchInput = document.querySelector('.header__search-input');

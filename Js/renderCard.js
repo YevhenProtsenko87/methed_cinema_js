@@ -2,20 +2,21 @@ import { getVideo } from "./services.js";
 
 const listCard = document.querySelector('.other-films__list');
 
-const renderCard = data => {
+const renderCard = (data, type) => {
 
    listCard.textContent = '';
 
-    Promise.all(     data.map(async (item) => {
+    Promise.all(data.map(async (item) => {
+        const mediaType = item.media_type ?? type ;
 
-        const video = await getVideo(item.id, item.media_type);
+        const video = await getVideo(item.id, mediaType);
         const key = video.results[0]?.key;
         const card = document.createElement('li');
         card.className = 'other-films__item';
     
         const link = document.createElement('a');
         if (key) link.href = `https://youtu.be/${key}`
-        link.className = 'other-films__link';
+        link.className = 'other-films__link tube';
         link.dataset.rating = item.vote_average;
      
         const img = document.createElement('img');

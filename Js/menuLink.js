@@ -30,22 +30,22 @@ const menuLink = () => {
 
                 if (target.classList.contains('get-nav__link_popular-movies')) {
                     getPopular('movie')
-                        .then(data => renderCard(data.results))
+                        .then(data => renderCard(data.results, 'movie'))
                 }
                                 
                 if (target.classList.contains('get-nav__link_popular-tv')) {
                     getTop('tv')
-                       .then(data => renderCard(data.results))
+                       .then(data => renderCard(data.results, 'tv'))
                 }
                 
                 if (target.classList.contains('get-nav__link_top-movies')) {
                     getPopular('movie')
-                        .then(data => renderCard(data.results))
+                        .then(data => renderCard(data.results,'movie'))
                 }
                 
                 if (target.classList.contains('get-nav__link_top-tv')) {
                     getTop('tv')
-                       .then(data => renderCard(data.results))
+                       .then(data => renderCard(data.results, 'tv'))
                 }
 
             }
